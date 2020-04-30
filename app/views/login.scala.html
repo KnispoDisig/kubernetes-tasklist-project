@@ -1,0 +1,27 @@
+@()(implicit request: RequestHeader, flash: Flash)
+
+@main("Login") {
+    <h2><b>Login</b></h2>
+
+    <br>
+    <form method="post" action="@routes.TaskList1.validateLoginPost()">
+        @helper.CSRF.formField
+        <h3><b>Log in</b></h3>
+        Username: <input type="text" name="username">
+        <br>
+        Password: <input type="password" name="password">
+        <br>
+        <input type="submit">
+    </form>
+
+    <br>
+    <form method="post" action="@routes.TaskList1.createUser()">
+        @helper.CSRF.formField
+        <h3><b>Create user</b></h3>
+        Username: <input type="text" name="username">
+        <br>
+        Password: <input type="password" name="password">
+        <br>
+        <input type="submit">
+    </form>
+}
